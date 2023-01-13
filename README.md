@@ -40,3 +40,11 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+# User-Story 
+[ ] Als User möchte ich die Möglichekeit zu einem Dark- oder Ligthmode haben
+[ ] Als User möchte ich die Währung von Dollar auf Euro umrechnen können
+[ ] Als User möchte ich sehen wieviel Euro eine gewisse Prozentanzahl von Trinkgeld ist
+[ ] Als User möchte ich eine benutzerfreundliche App haben
+
