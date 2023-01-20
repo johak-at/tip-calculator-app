@@ -126,6 +126,7 @@ definePageMeta({
         </div>
         <!-- Radio Button Ende -->
         <div class="form-control w-full max-w-xs">
+          <!--Anfang Number of People-->
           <label class="label">
             <span class="label-text">Number of people</span>
           </label>
@@ -135,20 +136,24 @@ definePageMeta({
             class="input input-bordered w-full max-w-xs"
           />
         </div>
+        <!--Ende Number of People-->
       </div>
       <div class="card-body">
-        <h2 class="card-title">rechts!</h2>
-        <p text-right>Click the button to listen on Spotiwhy app.</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Listen</button>
+        <button class="btn">calculate tip</button>
+        <div>
+          <p>tip amount</p>
         </div>
+        <div>
+          <p>tip total</p>
+        </div>
+        <button class="btn">reset</button>
       </div>
     </div>
   </div>
 </template>
 
 <style>
-/* * {
+/** {
   border: 1px solid red;
-} */
+}*/
 </style>
