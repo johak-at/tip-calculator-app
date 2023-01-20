@@ -31,19 +31,21 @@ definePageMeta({
 </script>
 
 <template>
-
   <div flex justify-center items-center h="100vh">
     <div class="card lg:card-side bg-base-100 shadow-xl">
-      <div w="50%">
+      <div class="card-body">
         <div class="form-control w-full max-w-xs">
-  <label class="label">
-    <span class="label-text">Bill</span>
-  </label>
-  <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" text-right />
-  <label class="label">
-   
-  </label>
-</div>
+          <label class="label">
+            <span class="label-text">Bill</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+            text-right
+          />
+          <label class="label"> </label>
+        </div>
       </div>
       <div class="card-body">
         <h2 class="card-title">rechts!</h2>
