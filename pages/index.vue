@@ -124,6 +124,17 @@ definePageMeta({
             />
           </label>
         </div>
+        <!-- Radio Button Ende -->
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Number of people</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
       </div>
       <div class="card-body">
         <h2 class="card-title">rechts!</h2>
