@@ -146,7 +146,7 @@ definePageMeta({
         <div>
           <p>tip total</p>
         </div>
-        <button class="btn">reset</button>
+        <button class="btn">Reset</button>
       </div>
     </div>
   </div>
