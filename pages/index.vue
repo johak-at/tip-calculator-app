@@ -44,7 +44,85 @@ definePageMeta({
             class="input input-bordered w-full max-w-xs"
             text-right
           />
-          <label class="label"> </label>
+        </div>
+        <!-- Ende des Eingabefeldes -->
+        <div class="form-control">
+          <!-- Anfang Radio Button -->
+          <label class="label cursor-pointer">
+            <span class="label-text">5%</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">10%</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">15%</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">20%</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">25%</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">50%</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">Custom</span>
+            <input
+              type="radio"
+              name="radio-10"
+              class="radio checked:bg-blue-500"
+              checked
+            />
+          </label>
         </div>
       </div>
       <div class="card-body">
