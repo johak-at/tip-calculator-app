@@ -5,8 +5,18 @@ definePageMeta({
 const bill = ref(0);
 const people = ref(0);
 const percentage = ref();
+const showCustomPercentage = ref(false);
+const customPercentage = ref(1);
 
 const tip = computed(function () {
+  //falls showCustomPercentage true ist:
+  // gib den berechneten Wert mit customPercentage zurück
+  if (showCustomPercentage.value)
+    return (
+      (parseFloat(bill.value) * customPercentage.value) /
+      100 /
+      parseFloat(people.value)
+    );
   return (parseFloat(bill.value) * percentage.value) / parseFloat(people.value);
 });
 const totalAmount = computed(function () {
@@ -42,7 +52,18 @@ const totalAmount = computed(function () {
           25%
         </button>
         <button class="btn btn-secondary" @click="percentage = 0.5">50%</button>
-        <button class="btn btn-secondary">Custom</button>
+        <button
+          class="btn btn-secondary"
+          @click="showCustomPercentage = !showCustomPercentage"
+        >
+          Custom
+        </button>
+        <input
+          v-model="customPercentage"
+          v-if="showCustomPercentage"
+          type="number"
+          class="input input-bordered w-full max-w-xs"
+        />
 
         <div class="form-control w-full max-w-xs">
           <!--Anfang Number of People-->
