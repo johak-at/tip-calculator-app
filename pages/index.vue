@@ -9,8 +9,6 @@ const showCustomPercentage = ref(false);
 const customPercentage = ref(1);
 
 const tip = computed(function () {
-  //falls showCustomPercentage true ist:
-  // gib den berechneten Wert mit customPercentage zurück
   if (showCustomPercentage.value)
     return (
       (parseFloat(bill.value) * customPercentage.value) /
@@ -22,6 +20,12 @@ const tip = computed(function () {
 const totalAmount = computed(function () {
   return parseFloat(bill.value) / parseFloat(people.value) + tip.value;
 });
+
+function reset() {
+  people.value = 0;
+  percentage.value = 0;
+  bill.value = 0;
+}
 </script>
 
 <template>
@@ -40,31 +44,6 @@ const totalAmount = computed(function () {
             text-right
           />
         </div>
-        <!-- Ende des Eingabefeldes -->
-
-        <button class="btn btn-secondary" @click="percentage = 0.05">5%</button>
-        <button class="btn btn-secondary" @click="percentage = 0.1">10%</button>
-        <button class="btn btn-secondary" @click="percentage = 0.15">
-          15%
-        </button>
-        <button class="btn btn-secondary" @click="percentage = 0.2">20%</button>
-        <button class="btn btn-secondary" @click="percentage = 0.25">
-          25%
-        </button>
-        <button class="btn btn-secondary" @click="percentage = 0.5">50%</button>
-        <button
-          class="btn btn-secondary"
-          @click="showCustomPercentage = !showCustomPercentage"
-        >
-          Custom
-        </button>
-        <input
-          v-model="customPercentage"
-          v-if="showCustomPercentage"
-          type="number"
-          class="input input-bordered w-full max-w-xs"
-        />
-
         <div class="form-control w-full max-w-xs">
           <!--Anfang Number of People-->
           <label class="label">
@@ -78,17 +57,58 @@ const totalAmount = computed(function () {
             text-right
           />
         </div>
+        <!-- Ende des Eingabefeldes -->
+        <div>
+          <button
+            class="btn btn-outline btn-success"
+            @click="percentage = 0.05"
+          >
+            5%
+          </button>
+          <button class="btn btn-outline btn-success" @click="percentage = 0.1">
+            10%
+          </button>
+          <button
+            class="btn btn-outline btn-success"
+            @click="percentage = 0.15"
+          >
+            15%
+          </button>
+        </div>
+        <div>
+          <button
+            class="btn btn-outline btn-success"
+            @click="percentage = 0.25"
+          >
+            25%
+          </button>
+          <button class="btn btn-outline btn-success" @click="percentage = 0.5">
+            50%
+          </button>
+          <button
+            class="btn btn-outline btn-success"
+            @click="showCustomPercentage = !showCustomPercentage"
+          >
+            Custom
+          </button>
+        </div>
+        <input
+          v-model="customPercentage"
+          v-if="showCustomPercentage"
+          type="number"
+          class="input input-bordered w-full max-w-xs"
+        />
+
         <!--Ende Number of People-->
       </div>
       <div class="card-body">
-        <button class="btn">calculate tip</button>
         <div>
           <p>tip amount: {{ tip }}</p>
         </div>
         <div>
           <p>total: {{ totalAmount }}</p>
         </div>
-        <button class="btn">Reset</button>
+        <button class="btn" @click="reset">Reset</button>
       </div>
     </div>
   </div>
