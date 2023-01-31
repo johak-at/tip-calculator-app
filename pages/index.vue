@@ -7,7 +7,6 @@ const people = ref(0);
 const percentage = ref();
 const showCustomPercentage = ref(false);
 const customPercentage = ref(1);
-const currencyDollar = 1.08;
 
 const tip = computed(function () {
   if (showCustomPercentage.value)
@@ -27,7 +26,26 @@ function reset() {
   percentage.value = 0;
   bill.value = 0;
 }
-function switchCurrency() {}
+
+const currency = ref("USD");
+const dollarEuroRate = ref(0);
+
+onMounted(async () => {
+  const response = await fetch("https://open.er-api.com/v6/latest/USD");
+  const data = await response.json();
+  dollarEuroRate.value = data.rates.EUR;
+  console.log(data);
+});
+
+function switchCurrency() {
+  if (currency.value === "USD") {
+    bill.value = (bill.value * dollarEuroRate.value).toFixed(2);
+    currency.value = "EUR";
+  } else {
+    bill.value = (bill.value / dollarEuroRate.value).toFixed(2);
+    currency.value = "USD";
+  }
+}
 </script>
 
 <template>
@@ -36,7 +54,7 @@ function switchCurrency() {}
       <div class="card-body">
         <div class="form-control w-full max-w-xs">
           <label class="label">
-            <span class="label-text" text-base>Bill</span>
+            <span class="label-text" text-base>Bill in {{ currency }}</span>
           </label>
           <input
             v-model="bill"
@@ -113,7 +131,9 @@ function switchCurrency() {}
         <button class="btn btn-outline btn-success" @click="reset">
           Reset
         </button>
-        <button class="btn btn-outline btn-success">switch currency</button>
+        <button class="btn btn-outline btn-success" @click="switchCurrency">
+          switch currency
+        </button>
       </div>
     </div>
   </div>
