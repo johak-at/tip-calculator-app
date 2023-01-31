@@ -7,6 +7,7 @@ const people = ref(0);
 const percentage = ref();
 const showCustomPercentage = ref(false);
 const customPercentage = ref(1);
+const currencyDollar = 1.08;
 
 const tip = computed(function () {
   if (showCustomPercentage.value)
@@ -26,6 +27,7 @@ function reset() {
   percentage.value = 0;
   bill.value = 0;
 }
+function switchCurrency() {}
 </script>
 
 <template>
@@ -108,7 +110,10 @@ function reset() {
         <div>
           <p>total: {{ totalAmount }}</p>
         </div>
-        <button class="btn" @click="reset">Reset</button>
+        <button class="btn btn-outline btn-success" @click="reset">
+          Reset
+        </button>
+        <button class="btn btn-outline btn-success">switch currency</button>
       </div>
     </div>
   </div>
